@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Matcher</title>
+    <link rel="stylesheet" href="index.css" />
+    <script src="index.js" defer></script>
+</head>
+<body>
+    <div class="main">
+        <div class="buttons">
+            <button id="revealButton" onclick="revealPlayers()">Reveal Players</button>
+            <button id="restartButton" onclick="setBoard()">Restart Game</button>
+        </div>
+        <div class="grid-container">
+            <div class="grid">
+            </div>
+        </div>
+        <div id="winModal" class="modal" >
+            <div class="modal-content" onclick="setBoard()">
+                <p>Congratulations - You Win!</p>
+                <p>Click to play again.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
