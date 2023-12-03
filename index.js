@@ -34,6 +34,8 @@ const imageArray = [
     { name: 'Jones', class: 'Jones', src: "assets/stickers-from-Old-School--Jones.webp"},
     { name: 'Bergkamp', class: 'Bergkamp', src: "assets/stickers-from-Old-School--Bergkamp.webp"},
     { name: 'Power', class: 'Power', src: "assets/stickers-from-Old-School--Power.webp"},
+    { name : 'Billy Stark', class: 'Stark', src: "assets/billy-stark.jpeg"},
+    { name: 'Phil Thompson', class: 'Thompson', src: "assets/Phil-thompson.png"}
 ];
 
 function revealPlayers() {
@@ -79,6 +81,7 @@ function setBoard() {
         newImg.playerName = image.name;
         newImg.classList.add(image.class); // the players name is added to img as a class. This is needed for the matching check.
         newImg.src = image.src;
+        newImg.alt = `${image.name} football sticker`
         newDiv.appendChild(newImg)
         grid.appendChild(newDiv)
     })
