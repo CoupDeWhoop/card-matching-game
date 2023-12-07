@@ -4,7 +4,13 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+body {
+    background-image: url('https://images.unsplash.com/photo-1522778119026-d647f0596c20?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
 .main {
     display: flex;
     flex-direction: column;
@@ -24,8 +30,7 @@
 .grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 5px;
-    border: solid 5px rgb(73, 73, 73);
+    gap: 10px;
     border-radius: 4px;
     padding:3px;
     margin: 10px;
@@ -35,7 +40,7 @@
 }
 
 .card {
-    background: lightgray;
+    background: #DA291C;
     border-radius: 4px;
     display: flex;
     justify-content: center;
