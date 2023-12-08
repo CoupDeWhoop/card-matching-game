@@ -1,5 +1,6 @@
 const grid = document.querySelector('.grid');
 let gridSize = 12
+let isWaiting = false;
 
 // const calculateGridSize = () => {
 //     const windowWidth = window.innerWidth;
@@ -34,12 +35,13 @@ const imageArray = [
     { name: 'Jones', class: 'Jones', src: "assets/stickers-from-Old-School--Jones.webp"},
     { name: 'Bergkamp', class: 'Bergkamp', src: "assets/stickers-from-Old-School--Bergkamp.webp"},
     { name: 'Power', class: 'Power', src: "assets/stickers-from-Old-School--Power.webp"},
-    { name : 'Billy Stark', class: 'Stark', src: "assets/billy-stark.jpeg"},
-    { name: 'Phil Thompson', class: 'Thompson', src: "assets/Phil-thompson.png"}
+    { name : 'Stark', class: 'Stark', src: "assets/billy-stark.jpeg"},
+    { name: 'Thompson', class: 'Thompson', src: "assets/Phil-thompson.png"}
 ];
 
 function revealPlayers() {
     isShowingAllPlayers = true;
+    isWaiting = true;
     document.querySelectorAll('.card').forEach(function (card) {
         card.firstElementChild.classList.add('is-revealed');
     });
@@ -89,7 +91,7 @@ function setBoard() {
     //you can't use array methods on a html collection, it needs to be spread into an array
     const cards = [...document.getElementsByClassName('card')];
     const chosenCard = []; // todo - make this an object instead
-    let isWaiting = false; 
+    isWaiting = false; 
     let matchedCount = 0;
 
 
@@ -97,9 +99,8 @@ function setBoard() {
 
     cards.forEach((card)=>{
         card.addEventListener('click', (event)=>{
-            console.log(card.querySelector('img').playerName)
             const cardId = card.querySelector('img').id
-
+            console.log(isWaiting)
             if (card.querySelector('.is-matched') || isWaiting || isShowingAllPlayers) { 
                 return
             }
